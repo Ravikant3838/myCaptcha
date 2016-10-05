@@ -1,0 +1,92 @@
+ <!DOCTYPE  html>
+<html lang="es" ng-app="app">
+<head>
+    <meta charset="UTF-8" />
+    <title>Captcha using Angular</title>  
+    <style type="text/css">
+        .font-style{
+            border: 1px solid #ccc;
+            font-size: 30px;
+            font-weight: 600;
+            padding: 10px;
+            text-align: center;
+        }
+        .style1{
+            font-family: monospace;
+            background-color: green;
+            color: white;
+        }
+        .style2{
+            font-family: serif;
+            background-color: violet;
+            color: white;
+        }
+        .style3{
+            font-family: 'times new roman';
+            background-color: red;
+            color: yellow;
+        }
+        .style4{
+            font-family: sans-serif;
+            background-color: cyan;
+            color: #444;
+        }
+        .style5{
+            font-family: arial;
+            background-color: gray;
+            color: #fff;
+        }
+        .style6{
+            font-family: fantasy;
+            background-color:blue;
+            color: #eee;
+        }
+        .style7{
+            font-family: helvetica;
+            background-color: #dedede;
+            columns: #0a0a0a;
+        }
+        .style8{
+            font-family: tahoma;
+            background-color: orange;
+            color: #efefef;
+        }
+        .style9{
+            font-family: 'lucida grande';
+            background-color:pink;
+            color: blue;
+        }
+        .captcha-txtbox{
+            padding: 8px 0px;
+            font-size:30px;
+            text-align: center;
+            width: 99%;
+            outline:0;
+        }
+    </style>
+</head>
+<body ng-controller="homeController">
+    <form name="loginUserForm">
+        <fieldset>
+            <legend>Captcha using angularjs</legend>
+            <div class="row">
+                <div class="">
+                    <!--add captcha to form-->
+                    <rk-captcha captcha="captcha" captcha-matched="captchaMatched"></rk-captcha>
+                </div>
+                <button type="submit" ng-disabled="!captchaMatched" ng-click="login()" class="button expand round">
+                    Login
+                </button>
+                <button  ng-click="refresh()" class="button expand round">
+                    Refresh
+                </button>
+            </div>
+
+        </fieldset>
+    </form>
+    <!--load js files angularjs, captcha.js and app.js-->
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="myCaptcha.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
